@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace InheritanceOfAnimals
 {
-    internal class Ostrich : Bird
+    public class Ostrich : Bird
     {
+        public override Egg[] LayEggs(int numberOfEggs)
+        {
+            Egg[] eggs = new Egg[numberOfEggs];
+            for (int i =0; i < eggs.Length; i++)
+            {
+                eggs[i] = new Egg(Bird.Randomizer.NextDouble() + 12, "speckled");
+            }
+            return eggs;
+        }
+        
     }
 }
